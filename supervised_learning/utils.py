@@ -113,10 +113,9 @@ class Dataset_CRNN(data.Dataset):
 
 def data_selection(use_color):
     root = []
-    root.append("/home/ubuntu/packing/data/data_newsensor_7/")
-    root.append("/home/ubuntu/packing/data/data_newsensor_8/")
+    root.append("/media/siyuan/data/Data_packing_RL/data_newsensor_3/")
 
-    num_data = 3000 
+    num_data = 4000
 
     file_folder = []  
 
