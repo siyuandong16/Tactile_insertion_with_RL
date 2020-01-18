@@ -16,7 +16,7 @@ from torchvision import datasets, transforms
 from utils import CNN_Actor, data_selection
 
 
-def run(init_lr=0.0001, max_epoch=64e3, batch_size=128*10, save_model=''):
+def run(init_lr=0.0001, max_epoch=64e3, batch_size=128*5, save_model=''):
 
     use_color = True 
     train_set, valid_set, train_data_size, valid_data_size = data_selection(use_color)
@@ -128,4 +128,4 @@ def run(init_lr=0.0001, max_epoch=64e3, batch_size=128*10, save_model=''):
 
 if __name__ == '__main__':
     # need to add argparse
-    run(save_model='/home/ubuntu/packing/weights/')
+    run(save_model='/home/siyuan/Documents/2020_RSS_still_packing/tactile_insertion_RL/supervised_learning/')

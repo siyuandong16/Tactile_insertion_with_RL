@@ -115,7 +115,7 @@ def data_selection(use_color):
     root = []
     root.append("/media/siyuan/data/Data_packing_RL/data_newsensor_3/")
 
-    num_data = 4000
+    num_data = 5000
 
     file_folder = []  
 
@@ -126,15 +126,9 @@ def data_selection(use_color):
             path = root_folder+str(i)+'/'
             break_sign = False
             if os.path.isdir(path):
-                for j in range_list:
-                    img = cv2.imread(path+str(j)+'.jpg')
-                    if img is None:
-                        break_sign = True
-                        break
                 label = np.array(np.load(path + 'label_true.npy'))  
-                if not (label[0] > 0 and label[1] < 0) and (not break_sign):
-                    if (label[0] < 0 and label[1] < 1.0) or (label[0] > -1 and label[1] > 0):
-                        file_folder.append(path)
+                if (label[0] < 0 and label[1] < 1.0) or (label[0] > -1 and label[1] > 0):
+                    file_folder.append(path)
 
     num_of_data = len(file_folder)
     num_of_train = int(num_of_data*0.8) 
